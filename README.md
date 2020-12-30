@@ -20,3 +20,9 @@ After an hour of testing a variety of normalization schemes and classification a
 Following the AutoML run, the best model (Voting Ensemble) was deployed using an Aure Container Instance with authentication enabled. Next, using the SDK I enabled application insights for the deployed model. This change is reflected in the model overview as shown below:
 
 ![Application Insights](/images/app-insights-best-model.png)
+
+The next task was to check log output from the deployed model. This was done using the supplied logs.py script. After running the script the following output was displayed:
+
+![Logs](/images/logging-py-output.png)
+
+Clearly shown in the log output are GET requests sent to the model to retrieve the swagger.json file used to generate Swagger documentation. 
