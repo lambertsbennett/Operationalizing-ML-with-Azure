@@ -25,4 +25,12 @@ The next task was to check log output from the deployed model. This was done usi
 
 ![Logs](/images/logging-py-output.png)
 
-Clearly shown in the log output are GET requests sent to the model to retrieve the swagger.json file used to generate Swagger documentation. 
+Clearly shown in the log output are GET requests sent to the model to retrieve the swagger.json file that can be used to generate Swagger documentation. 
+
+To verify that the containerized model's Swagger documentation is properly set up I then ran two provided scripts swagger.sh and serve.py. swagger.sh simply contains two Docker commands: 1) Pull the Swagger container image and 2) run the Swagger container with port forwarding.
+
+serve.py creates a simple HTTP server to expose the swagger.json file to the Swagger container. After running these two scripts I navigated to localhost:{selected port} and could view the generated documentation.
+
+![Swagger](/images/swagger-documentation.png)
+
+
