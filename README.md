@@ -36,3 +36,23 @@ serve.py creates a simple HTTP server to expose the swagger.json file to the Swa
 To test the availability of the deployed model, I used the provided endpoint.py script. The script simply sends a request containing two profiles of individuals for the model to predict whether they should be the target of additional marketing. The request is sent to the model's URI and authentication information is embedded in the request header. The response received from the model consists simply of a dictionary containing the description 'result' and the predictions for each individual sent in the request. (In this case No for both)
 
 ![Predictions](/images/Model-response-json.png)
+
+### Pipeline Creation and Deployment
+The second part of this project was to create, publish, and consume a pipeline using the Azure SDK. This was achieved using the provided Jupyter Notebook. Within the notebook the first step was to link the workspace and define an experiment. Then the compute cluster used previously was attached for the autoML run that was the central aim of the pipeline. Running all cells of the notebook resulted in a simple to represent pipeline:
+
+![Pipeline](/images/pipeline-designer.png)
+
+Within this pipeline the same bank marketing dataset is linked to an AutoML step allowing AutoML experiments to be run with ease. 
+After running the notebook I carried out several checks to ensure that the pipeline was available:
+
+1) I checked the pipeline section of ML Studio to make sure that the pipeline had been created successfully.
+![Pipeline Created](/images/running-pipeline.png)
+
+2) I checked that the pipeline had been published effectively and that the REST endpoint was available.
+![Available Pipeline](/images/active-pipeline.png)
+
+3) During the process of running the pipeline I monitored progress using the RunDetails Widget.
+![RD widget](/images/widgets.png)
+
+4) I checked that the REST endpoint was active and submitted a job using an HTTP request. I then checked that the job was running as expected.
+![piplin](/images/running-pipeline2.png)
