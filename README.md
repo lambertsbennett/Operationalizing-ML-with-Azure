@@ -11,3 +11,12 @@ To begin the project, a new registered dataset was created by uploading the bank
 Then, once the dataset was uploaded, I configured the automated machine learning run to carry out a classification experiment and specified the target variable. The experiment ran for approximately 1 hour and, following completion, you see the following:
 
 ![AutoML completed](/images/completed-automl.png)
+
+After an hour of testing a variety of normalization schemes and classification algorithms the Voting Ensemble algorithm emerged as the best model with an accuracy of nearly 92%.
+
+![Best autoML model](/images/best-model.png)
+
+### Model Deployment
+Following the AutoML run, the best model (Voting Ensemble) was deployed using an Aure Container Instance with authentication enabled. Next, using the SDK I enabled application insights for the deployed model. This change is reflected in the model overview as shown below:
+
+![Application Insights](/images/app-insights-best-model.png)
