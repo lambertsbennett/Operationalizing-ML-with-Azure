@@ -6,4 +6,8 @@ For the second project of the Udacity Machine Learning Engineer with Microsoft A
 ### Automated Machine Learning
 To begin the project, a new registered dataset was created by uploading the bank marketing dataset. Following the upload process the dataset is listed alongside other registered datasets.
 
-![Registered bank marketing dataset](/images/registered-datasets.png)
+![Registered dataset](/images/registered-dataset.png)
+
+Then, once the dataset was uploaded, I configured the automated machine learning run to carry out a classification experiment and specified the target variable. The experiment ran for approximately 1 hour and, following completion, you see the following:
+
+![AutoML completed](/images/completed-automl.png)
