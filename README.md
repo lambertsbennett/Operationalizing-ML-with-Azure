@@ -29,8 +29,10 @@ Clearly shown in the log output are GET requests sent to the model to retrieve t
 
 To verify that the containerized model's Swagger documentation is properly set up I then ran two provided scripts swagger.sh and serve.py. swagger.sh simply contains two Docker commands: 1) Pull the Swagger container image and 2) run the Swagger container with port forwarding.
 
-serve.py creates a simple HTTP server to expose the swagger.json file to the Swagger container. After running these two scripts I navigated to localhost:{selected port} and could view the generated documentation.
+serve.py creates a simple HTTP server to expose the swagger.json file to the Swagger container. After running these two scripts I navigated to localhost:8000/swagger.json and could view the generated documentation.
 
 ![Swagger](/images/swagger-documentation.png)
 
+To test the availability of the deployed model, I used the provided endpoint.py script. The script simply sends a request containing two profiles of individuals for the model to predict whether they should be the target of additional marketing. The request is sent to the model's URI and authentication information is embedded in the request header. The response received from the model consists simply of a dictionary containing the description 'result' and the predictions for each individual sent in the request. (In this case No for both)
 
+![Predictions](/images/Model-response-json.png)
