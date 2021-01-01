@@ -61,3 +61,6 @@ After running the notebook I carried out several checks to ensure that the pipel
 
 4) I checked that the REST endpoint was active and submitted a job using an HTTP request. I then checked that the job was running as expected.
 ![piplin](/images/running-pipeline2.png)
+
+### Future Work/Improvements
+Although the model that this project yielded was decently accurate (≈92%), a future run of the AutoML process could be longer, allowing greater exploration of model and normalization scheme combinations. Furthermore, it would be interesting to enable deep learning and see if neural networks would perform any better for this classification task. A interesting addition to this project would be automating model updates, either using cron jobs or other triggering events, such as new data upload to run the AutoML process over again.
